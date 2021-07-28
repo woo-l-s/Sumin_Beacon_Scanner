@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="90dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginEnd="5dp"
+    android:layout_marginStart="5dp"
+    android:layout_marginBottom="15dp"
+    android:id="@+id/linearlayout"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="0dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="0dp"
+        android:background="@color/white"
+        android:foreground="?android:attr/selectableItemBackgroundBorderless"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/textMiddle"
+            android:text="UUID"/>
+
+        <TextView
+            android:id="@+id/tvUuid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="uuid값 " />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/textMiddle"
+                    android:text="Major"/>
+                <TextView
+                    android:id="@+id/tvMajor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Major 값 " />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/textMiddle"
+                    android:text="Minor"/>
+                <TextView
+                    android:id="@+id/tvMinor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Minor 값 " />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                >
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/textMiddle"
+                    android:text="RSSI"/>
+                <TextView
+                    android:id="@+id/tvRssi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="RSSI 값 " />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                >
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/textMiddle"
+                    android:text="TX"/>
+                <TextView
+                    android:id="@+id/tvTx"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="TX 값 " />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/textMiddle"
+                    android:text="거리"/>
+                <TextView
+                    android:id="@+id/tvDist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="거리 값 " />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/textMiddle"
+                    android:text="Floor"/>
+                <TextView
+                    android:id="@+id/tvFloor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="몇층" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>
