@@ -63,9 +63,7 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer {
 
                 if (beacons != null && !beacons.isEmpty()) {
                     beaconList = (ArrayList<Beacon>) beacons;
-                    Log.d(TAG, beaconList.toString());
                     Log.d(TAG, "인식되는 비콘 갯수: " + String.valueOf(beaconList.size()));
-                    String beaconStr = "";
                     StringBuffer sb = new StringBuffer();
                     for (int i = 0; i < beaconList.size(); i++) {
                         Log.d(TAG, i+"'s beacon UUID:" + beaconList.get(i).getId1() + ", Major: " + beaconList.get(i).getId2() +
@@ -92,7 +90,7 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer {
 //                    }
 //                    rangingMessageRaised = true;
 
-                    beaconAdapter.notifyDataSetChanged();   //작동 안됨
+                    beaconAdapter.notifyDataSetChanged();   //리스트뷰 동작 안됨,,
 
                     //층 출력을 위해 Rssi값을 기준으로 비콘 리스트 정렬
                     Collections.sort(beaconList, new Comparator<Beacon>() {
@@ -103,7 +101,7 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer {
                         }
                     });
 
-                    //가장 강도 높은 Rssi를 가진 비콘의 minor값으로 층을 결정 (minor값에다가 그냥 층 수 저장하고 싶은데 내 폰이 구데기라 설정 못했음)
+                    //가장 강도 높은 Rssi를 가진 비콘의 minor값으로 층을 결정 (minor값에다가 그냥 층 수 저장하고 싶은데 내 폰이 구데기라 minor값 변경 못하는 중)
                     if (beaconList.get(0).getId3().toInt() == 64105) tvFloor.setText("2층");
                     else if (beaconList.get(0).getId3().toInt() == 64101) tvFloor.setText("1층");
                     else  tvFloor.setText("?층");
