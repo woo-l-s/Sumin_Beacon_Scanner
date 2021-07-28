@@ -92,21 +92,21 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer {
 //                    }
 //                    rangingMessageRaised = true;
 
-                    beaconAdapter.notifyDataSetChanged();
+                    beaconAdapter.notifyDataSetChanged();   //작동 안됨
 
-                    //층
+                    //층 출력을 위해 Rssi값을 기준으로 비콘 리스트 정렬
                     Collections.sort(beaconList, new Comparator<Beacon>() {
                         @Override
                         public int compare(Beacon o1, Beacon o2) {
                             if (o1.getRssi() < o2.getRssi()) return 1;
-                            else return -1;
+                            else                             return -1;
                         }
                     });
+
+                    //가장 강도 높은 Rssi를 가진 비콘의 minor값으로 층을 결정 (minor값에다가 그냥 층 수 저장하고 싶은데 내 폰이 구데기라 설정 못했음)
                     if (beaconList.get(0).getId3().toInt() == 64105) tvFloor.setText("2층");
                     else if (beaconList.get(0).getId3().toInt() == 64101) tvFloor.setText("1층");
                     else  tvFloor.setText("?층");
-
-
                 }
             }
         });
@@ -116,8 +116,11 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer {
     private void startBeaconMonitoring() {
         Log.d(TAG, "startBeaconMonitoring 호출됨");
         try {
+            //원래 유튜브에서 제공했던 코드
 //             beaconRegion = new Region("MyBeacons", Identifier.parse("0AC59CA4-DFA6-442C-8C65-22247851344C"), Identifier.parse("4"), Identifier.parse("200"));
+            //다 null 값주면 모든 비콘 인식하는 것임
 //             beaconRegion = new Region("MyBeacons", null, null, null);
+            //Major값이 40010인 비콘만 인식하도록 함
             beaconRegion = new Region("MyBeacons", null, Identifier.parse("40010"), null);
 
 //            beaconManager.startMonitoringBeaconsInRegion(beaconRegion); //장치가 비콘 영역에 입장/퇴장하는 것을 모니터링 시작
